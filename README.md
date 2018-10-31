@@ -6,15 +6,15 @@
 `> mongo`  
 для подключения к вашей MongoDB,  
 Создайте пользователя при помощи команды  
-`> use admin  
-  
-> db.createUser(  
- {  
-   user: "adminuser",  
-   pwd: "password",  
-   roles: [ { role: "userAdminAnyDatabase", db: "admin" }, { role: "dbOwner", db: "admin" }, { role: "dbOwner", db: "pwbox" }, { role: "dbOwner", db: "pwbox-cache" } ]  
- }  
-)`  
+`> use admin`  
+ ` `   
+`> db.createUser(`  
+ `{`  
+   `user: "adminuser",`  
+   `pwd: "password",`  
+   `roles: [ { role: "userAdminAnyDatabase", db: "admin" }, { role: "dbOwner", db: "admin" }, { role: "dbOwner", db: "pwbox" }, { role: "dbOwner", db: "pwbox-cache" } ]`  
+ `}`  
+`)`  
 user — логин пользователя   
 pwd — пароль пользователя  
 Не используйте в пароле пользователя символы @, :, # т.к. это может привести к сбоям в работе приложениям.  
@@ -37,14 +37,14 @@ pwd — пароль пользователя
 ## Настройте Пассворк для работы с новым режимом  
 Найдите и откройте файл `<пассворк>/app/config.ini.`  
 Найдите параметр connectionString  
-`[mongo]   
-connectionString = mongodb://localhost:27017   
-dbname = pwbox`   
+`[mongo]`   
+`connectionString = mongodb://localhost:27017`   
+`dbname = pwbox`   
   
 и замените на:  
   
-`connectionString = mongodb:// adminuser: password@localhost:27017  
-dbname = pwbox`  
+`connectionString = mongodb:// adminuser: password@localhost:27017`  
+`dbname = pwbox`  
 Сохраните файл и обновите страницу в браузере с Пассворком   
     
 ## Диагностирование проблем  
@@ -65,9 +65,9 @@ dbname = pwbox`
 `> mongo`  
 `> use admin`  
   
-`> var schema = db.system.version.findOne({"_id" : "authSchema"});  
-schema.currentVersion = 3;  
-db.system.version.save(schema);`  
+`> var schema = db.system.version.findOne({"_id" : "authSchema"});`  
+`schema.currentVersion = 3;`  
+`db.system.version.save(schema);`  
 В конфигурационном файле MongoDB верните строку  
 `security.authorization: enabled`  
 И снова перезапустите MongoDB  
