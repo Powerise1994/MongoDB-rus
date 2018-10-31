@@ -37,9 +37,9 @@ pwd — пароль пользователя
 ## Настройте Пассворк для работы с новым режимом  
 Найдите и откройте файл `<пассворк>/app/config.ini.`  
 Найдите параметр connectionString  
-`[mongo]  
-connectionString = mongodb://localhost:27017  
-dbname = pwbox`  
+`[mongo]   
+connectionString = mongodb://localhost:27017   
+dbname = pwbox`   
   
 и замените на:  
   
