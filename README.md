@@ -6,7 +6,7 @@
 `> mongo`  
 для подключения к вашей MongoDB,  
 Создайте пользователя при помощи команды  
-`> use admin  
+`> use admin   
   
 > db.createUser(  
  {  
