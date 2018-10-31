@@ -6,7 +6,7 @@
 `> mongo`  
 для подключения к вашей MongoDB,  
 Создайте пользователя при помощи команды  
-`> use admin   
+`> use admin  
   
 > db.createUser(  
  {  
@@ -14,7 +14,7 @@
    pwd: "password",  
    roles: [ { role: "userAdminAnyDatabase", db: "admin" }, { role: "dbOwner", db: "admin" }, { role: "dbOwner", db: "pwbox" }, { role: "dbOwner", db: "pwbox-cache" } ]  
  }  
-)`    
+)`  
 user — логин пользователя   
 pwd — пароль пользователя  
 Не используйте в пароле пользователя символы @, :, # т.к. это может привести к сбоям в работе приложениям.  
